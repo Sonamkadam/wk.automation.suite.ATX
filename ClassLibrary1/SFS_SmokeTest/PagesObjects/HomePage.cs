@@ -61,6 +61,66 @@ namespace SFS_ATX
 
         [FindsBy(How = How.XPath, Using = "//img[@title='Download Tax Preparation Products, Tax Program Updates, PCR Payroll Products, PCR Program Updates']")]
         public IWebElement ATXProgramDownload { get; set; }
+
+        [FindsBy(How =How.LinkText, Using = "Getting Started with ATX 2020")]
+        public IWebElement GettingStartedWithATX2020Link { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "ATX Blog")]
+        public IWebElement ATXBlogLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "User Guides")]
+        public IWebElement UserGuidesLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Conversions")]
+        public IWebElement ConversionsLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "System Requirements")]
+        public IWebElement SystemRequirementsLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "ATX Learning Portal")]
+        public IWebElement ATXLearningPortalLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "PCR Learning Portal")]
+        public IWebElement PCRLearningPortalLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "E-file Availability")]
+        public IWebElement EfileAvailabilityLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "E-File Status")]
+        public IWebElement EFileStatusLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "ATX Forms Schedule")]
+        public IWebElement ATXFormsScheduleLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Calendars and Charts")]
+        public IWebElement CalendarsandChartsLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "ATX Product Schedule")]
+        public IWebElement ATXProductScheduleLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "AnswerConnect Research")]
+        public IWebElement AnswerConnectResearchLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Remote Connection Utility")]
+        public IWebElement RemoteConnectionUtilityLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "GDPR (EU tax preparers, tax payers or data subjects)")]
+        public IWebElement GDPRLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "NATP")]
+        public IWebElement NATPLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "iTransact")]
+        public IWebElement iTransactLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Protection Plus")]
+        public IWebElement ProtectionPlusLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Banking Partners")]
+        public IWebElement BankingPartnersLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Versicom Communications")]
+        public IWebElement VersicomCommunicationsLink { get; set; }
         /// <summary>
         /// Methods for functioning on the elements.
         /// </summary>
@@ -123,8 +183,103 @@ namespace SFS_ATX
             ATXProgramDownload.Click();
         }
 
+        public void GettingStartedWithATX2020()
+        {
+            GettingStartedWithATX2020Link.Click();
+        }
+        public void ATXBlog()
+        {
+            ATXBlogLink.Click();
+        }
 
+        public void UserGuides()
+        {
+            UserGuidesLink.Click();
+        }
 
+        public void Conversions()
+        {
+            ConversionsLink.Click();
+        }
 
+        public void SystemRequirements()
+        {
+            SystemRequirementsLink.Click();
+        }
+
+        public void ATXLearningPortal()
+        {
+            ATXLearningPortalLink.Click();
+        }
+
+        public void PCRLearningPortal()
+        {
+            PCRLearningPortalLink.Click();
+        }
+
+        public void EfileAvailability()
+        {
+            EfileAvailabilityLink.Click();            
+        }
+
+        public void EFileStatus()
+        {
+            EFileStatusLink.Click();
+        }
+
+        public void ATXFormsSchedule()
+        {
+            ATXFormsScheduleLink.Click();
+        }
+
+        public void CalendarsandCharts()
+        {
+            CalendarsandChartsLink.Click();
+        }
+
+        public void ATXProductSchedule()
+        {
+            ATXProductScheduleLink.Click();
+        }
+
+        public void AnswerConnectResearch()
+        {
+            AnswerConnectResearchLink.Click();
+        }
+
+        public void RemoteConnectionUtility()
+        {
+            RemoteConnectionUtilityLink.Click();
+        }
+
+        public void GDPR()
+        {
+            GDPRLink.Click();
+        }
+
+        public void NATP()
+        {
+            NATPLink.Click();
+        }
+
+        public void iTransact()
+        {
+            iTransactLink.Click();
+        }
+
+        public void ProtectionPlus()
+        {
+            ProtectionPlusLink.Click();
+        }
+
+        public void BankingPartners()
+        {
+            BankingPartnersLink.Click();
+        }
+
+        public void VersicomCommunications()
+        {
+            VersicomCommunicationsLink.Click();
+        }
     }
 }

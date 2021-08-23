@@ -89,7 +89,7 @@ namespace SFS_ATX.TestScripts
 		{
 			try
 			{
-				test = extent.CreateTest("TC_022 Execution").Info("Validation Started for ATXProgramDownload URL");
+				test = extent.CreateTest("TC_021 Execution").Info("Validation Started for ATXProgramDownload URL");
 				HomePage hp = new HomePage(driver);
 				hp.ATXProgramDownloadsLink();
 				test.Log(Status.Info, "Clicked on ATXProgramDownload Link");
