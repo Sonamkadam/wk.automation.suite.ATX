@@ -460,14 +460,14 @@
     <Compile Include="SFS_SmokeTest\PagesObjects\HomeIndexPage.cs" />
     <Compile Include="SFS_SmokeTest\PagesObjects\HomePage.cs" />
     <Compile Include="SFS_SmokeTest\PagesObjects\LoginPage.cs" />
-    <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_BusinessPartners.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\BusinessPartners.cs" />
     <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_ContactUs.cs" />
     <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_FindAnswers.cs" />
     <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_Generic.cs" />
     <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_HomeLinks.cs" />
     <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_MyAccount.cs" />
     <Compile Include="SFS_SmokeTest\TestScripts\PO_TC_Preparer_Solutions.cs" />
-    <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_QuickLinks.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\QuickLinks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
