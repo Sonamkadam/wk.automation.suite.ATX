@@ -1,21 +1,21 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
+using SeleniumExtras.WaitHelpers;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SFS_ATX.PagesObjects
 {
-   public class HomeIndexPage
+    public class HomeIndexPage
     {
         IWebDriver Driver;
-
+       
        
         public HomeIndexPage(IWebDriver driver)
         {
             this.Driver = driver;
             PageFactory.InitElements(driver, this);
-
+           
         }
 
         [FindsBy(How = How.LinkText, Using = "Home")]

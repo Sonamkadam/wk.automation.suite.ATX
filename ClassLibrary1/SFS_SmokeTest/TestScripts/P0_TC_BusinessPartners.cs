@@ -1,15 +1,12 @@
 ﻿using AventStack.ExtentReports;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SFS_ATX;
 using SFS_ATX.BaseClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
-namespace ATX_lib.SFS_SmokeTest.TestScripts
+namespace SFS_ATX.TestScripts
 {
     [TestClass]
     public class P0_TC_BusinessPartners : BaseTest

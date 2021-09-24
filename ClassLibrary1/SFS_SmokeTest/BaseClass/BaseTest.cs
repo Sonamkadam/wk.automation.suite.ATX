@@ -51,7 +51,7 @@ namespace SFS_ATX.BaseClass
             test.Log(Status.Info, "Clicked on Home Link");
             //driver.Url = ConfigurationManager.AppSettings.Get("URL");
             //Console.WriteLine("URL" + url);
-            //driver.Navigate().GoToUrl(url);
+            //driver.Navigate()d.GoToUrl(url);
             Thread.Sleep(3000);
 
         }
