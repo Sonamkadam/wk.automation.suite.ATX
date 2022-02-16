@@ -10,8 +10,7 @@ namespace SFS_ATX.PagesObjects
     public class HomeIndexPage
     {
         IWebDriver Driver;
-
-
+  
         public HomeIndexPage(IWebDriver driver)
         {
             this.Driver = driver;
