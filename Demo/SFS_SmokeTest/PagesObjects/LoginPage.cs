@@ -41,6 +41,7 @@ namespace SFS_ATX
         public void ClientLoginPage(string cntId,string Uname, string Pword)
         {
             Loginlink.Click();
+            //string cntId1 =cntId;
             ClientId.SendKeys(cntId);
             Username.SendKeys(Uname);
             Password.SendKeys(Pword);

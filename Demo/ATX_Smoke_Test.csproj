@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.NET.Test.Sdk.17.0.0\build\net45\Microsoft.NET.Test.Sdk.props" Condition="Exists('..\packages\Microsoft.NET.Test.Sdk.17.0.0\build\net45\Microsoft.NET.Test.Sdk.props')" />
+  <Import Project="..\packages\Microsoft.CodeCoverage.17.0.0\build\netstandard1.0\Microsoft.CodeCoverage.props" Condition="Exists('..\packages\Microsoft.CodeCoverage.17.0.0\build\netstandard1.0\Microsoft.CodeCoverage.props')" />
   <Import Project="..\packages\Microsoft.Extensions.Configuration.UserSecrets.2.2.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('..\packages\Microsoft.Extensions.Configuration.UserSecrets.2.2.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
   <Import Project="..\packages\MSTest.TestAdapter.2.2.8\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\packages\MSTest.TestAdapter.2.2.8\build\net45\MSTest.TestAdapter.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -212,6 +214,9 @@
     <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.CodeCoverage.Shim, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeCoverage.17.0.0\lib\net45\Microsoft.VisualStudio.CodeCoverage.Shim.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.2.2.8\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -395,27 +400,43 @@
     <Compile Include="SFS_SmokeTest\PagesObjects\HomeIndexPage.cs" />
     <Compile Include="SFS_SmokeTest\PagesObjects\HomePage.cs" />
     <Compile Include="SFS_SmokeTest\PagesObjects\LoginPage.cs" />
-    <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_BusinessPartners.cs" />
-    <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_ContactUs.cs" />
-    <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_FindAnswers.cs" />
-    <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_Generic.cs" />
-    <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_HomeLinks.cs" />
-    <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_MyAccount.cs" />
-    <Compile Include="SFS_SmokeTest\TestScripts\P0_TC_QuickLinks.cs" />
-    <Compile Include="SFS_SmokeTest\TestScripts\P1_SessionTimeout.cs" />
-    <Compile Include="SFS_SmokeTest\TestScripts\PO_TC_Preparer_Solutions.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\SessionTimeout\CsvDataSourceAttribute.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\SessionTimeout\P1_TC_ProductInfo.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\P0_testcases\P0_TC_BusinessPartners.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\P0_testcases\P0_TC_ContactUs.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\P0_testcases\P0_TC_FindAnswers.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\P0_testcases\P0_TC_Generic.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\P0_testcases\P0_TC_HomeLinks.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\P0_testcases\P0_TC_MyAccount.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\P0_testcases\P0_TC_QuickLinks.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\P0_testcases\PO_TC_Preparer_Solutions.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\SessionTimeout\P1_TC_BankUpdates.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\SessionTimeout\P1_TC_CAS.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\SessionTimeout\P1_TC_Enviornment.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\SessionTimeout\P1_TC_PaperlessPlus.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\SessionTimeout\P1_TC_ReturnRetrieval.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\SessionTimeout\P1_TC_StateUpdates.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\SessionTimeout\P1_TC_SubmitEfin.cs" />
+    <Compile Include="SFS_SmokeTest\TestScripts\SessionTimeout\P1_TC_TWSoftware.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="SFS_SmokeTest\TestCases_Docs\ATX_P0testcases.xlsx" />
+    <None Include="SFS_SmokeTest\TestCases_Docs\ATX_P0testcases.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SFS_SmokeTest\TestData\Login.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SFS_SmokeTest\TestData\ProdLogin.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="SFS_SmokeTest\Extent Reports\index.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SFS_SmokeTest\Screenshots\" />
-    <Folder Include="SFS_SmokeTest\TestData\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
@@ -435,10 +456,16 @@
     <Error Condition="!Exists('..\packages\Microsoft.Extensions.Configuration.UserSecrets.2.2.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Configuration.UserSecrets.2.2.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.AspNetCore.Server.IIS.2.2.0\build\netstandard2.0\Microsoft.AspNetCore.Server.IIS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.AspNetCore.Server.IIS.2.2.0\build\netstandard2.0\Microsoft.AspNetCore.Server.IIS.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.AspNetCore.Server.IISIntegration.2.2.0\build\netstandard2.0\Microsoft.AspNetCore.Server.IISIntegration.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.AspNetCore.Server.IISIntegration.2.2.0\build\netstandard2.0\Microsoft.AspNetCore.Server.IISIntegration.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeCoverage.17.0.0\build\netstandard1.0\Microsoft.CodeCoverage.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeCoverage.17.0.0\build\netstandard1.0\Microsoft.CodeCoverage.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeCoverage.17.0.0\build\netstandard1.0\Microsoft.CodeCoverage.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeCoverage.17.0.0\build\netstandard1.0\Microsoft.CodeCoverage.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NET.Test.Sdk.17.0.0\build\net45\Microsoft.NET.Test.Sdk.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NET.Test.Sdk.17.0.0\build\net45\Microsoft.NET.Test.Sdk.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NET.Test.Sdk.17.0.0\build\net45\Microsoft.NET.Test.Sdk.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NET.Test.Sdk.17.0.0\build\net45\Microsoft.NET.Test.Sdk.targets'))" />
   </Target>
   <Import Project="..\packages\MSTest.TestAdapter.2.2.8\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.2.2.8\build\net45\MSTest.TestAdapter.targets')" />
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
   <Import Project="..\packages\Microsoft.Extensions.Configuration.UserSecrets.2.2.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets" Condition="Exists('..\packages\Microsoft.Extensions.Configuration.UserSecrets.2.2.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets')" />
   <Import Project="..\packages\Microsoft.AspNetCore.Server.IIS.2.2.0\build\netstandard2.0\Microsoft.AspNetCore.Server.IIS.targets" Condition="Exists('..\packages\Microsoft.AspNetCore.Server.IIS.2.2.0\build\netstandard2.0\Microsoft.AspNetCore.Server.IIS.targets')" />
   <Import Project="..\packages\Microsoft.AspNetCore.Server.IISIntegration.2.2.0\build\netstandard2.0\Microsoft.AspNetCore.Server.IISIntegration.targets" Condition="Exists('..\packages\Microsoft.AspNetCore.Server.IISIntegration.2.2.0\build\netstandard2.0\Microsoft.AspNetCore.Server.IISIntegration.targets')" />
+  <Import Project="..\packages\Microsoft.CodeCoverage.17.0.0\build\netstandard1.0\Microsoft.CodeCoverage.targets" Condition="Exists('..\packages\Microsoft.CodeCoverage.17.0.0\build\netstandard1.0\Microsoft.CodeCoverage.targets')" />
+  <Import Project="..\packages\Microsoft.NET.Test.Sdk.17.0.0\build\net45\Microsoft.NET.Test.Sdk.targets" Condition="Exists('..\packages\Microsoft.NET.Test.Sdk.17.0.0\build\net45\Microsoft.NET.Test.Sdk.targets')" />
 </Project>
